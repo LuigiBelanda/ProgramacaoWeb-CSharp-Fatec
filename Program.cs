@@ -76,22 +76,28 @@ namespace ProgramacaoPw_CSharp_Fatec
 
             Console.WriteLine("\n\n======================\nCliente + Endereco\n======================");
 
-            Console.WriteLine("\n\nUtilizando outra class (Cliente.cs) para criar alguns objetos do tipo Cliente e ainda dentro da class Cliente usando a class Endereco.cs \n");
+            Console.WriteLine("\n\nUtilizando outra class (Cliente.cs) para criar alguns objetos do tipo Cliente e ainda dentro da class Cliente usando a class Endereco.cs");
 
+            // Aqui usamos a class Cliente para criar alguns objetos do tipo Cliente
+            // Usamos o construtor da class Cliente e ainda aqui integramos uma outra classe dentro dela
+            // A class Endereco, pois um dos dados que enviamos para a a criação do objete Cliente 
+            // É do tipo Endereco
             Cliente c1 = new Cliente(1, "Gabriele", "991340444", endereco);
-            Cliente c2 = new Cliente(2, "Luis", "991340445", endereco);
+            Cliente c2 = new Cliente(2, "Luis", "991340445", endereco2);
             Cliente c3 = new Cliente(3, "Leandro", "991340446", endereco);
-            Cliente c4 = new Cliente(4, "Ana", "991340447", endereco);
+            Cliente c4 = new Cliente(4, "Ana", "991340447", endereco2);
             Cliente c5 = new Cliente(5, "Rayssa", "991340448", endereco);
 
+            // Aqui como passamos um objeto do tipo Endereco acima, usando como base a classe Endereco, 
+            // podemos usar os método da classe Endereco também, como mostra aqui abaixo (basicamente, classe dentro de classe)
+            Console.WriteLine("Chamando o método getEndereco(Cliente) que retorna o objeto Endereco que tem os métodos da class Endereco\n");
             Console.WriteLine(c2.getEndereco().getRua() + " " + c2.getEndereco().getNumero());
 
             c2.getEndereco().setNumero("136");
 
             Console.WriteLine(c2.getEndereco().getNumero());
             Console.WriteLine(c2.getEndereco().EnderecoCompleto());
-
-            c2.getEndereco().EnderecoCurto();
+            Console.WriteLine(c2.getEndereco().EnderecoCurto());
 
 
 
@@ -102,34 +108,60 @@ namespace ProgramacaoPw_CSharp_Fatec
 
             Console.WriteLine("\n\n======================\nHerança\n======================");
 
+            // Aqui criamos um objeto Carro por meio da class Carro, onde esta
+            // Herda os atributos e métodos da class Veiculo, o mesmo ocorre com 
+            // os outros objetos abaixo
             Carro Gol = new Carro();
             Gol.temMotor = true;
             Gol.numeroPortas = 4;
             Gol.numeroAssentos = 5;
             Gol.fabricante = "Vw";
-
-            Bike caloi = new Bike();
-            caloi.temMotor = false;
-            caloi.numeroPortas = 0;
-            caloi.numeroAssentos = 1;
+            Gol.arCondicionado = true;
+            Gol.cintoSeguranca = true;
+            Gol.marcaRadio = "Cochicho";
 
             Carro Saveiro = new Carro();
-            Carro Palio = new Carro();
-            Carro Uno = new Carro();
-
+            Saveiro.temMotor = true;
+            Saveiro.numeroPortas = 2;
+            Saveiro.numeroAssentos = 5;
             Saveiro.fabricante = "Vw";
-            Palio.fabricante = "Fiat";
-            Uno.fabricante = "Fiat";
+            Saveiro.arCondicionado = true;
+            Saveiro.cintoSeguranca = true;
+            Saveiro.marcaRadio = "RadioTudor";
 
-            Bike speed = new Bike();
-            speed.temMotor = false;
-            speed.numeroPortas = 0;
-            speed.numeroAssentos = 1;
+            Carro Palio = new Carro();
+            Palio.temMotor = true;
+            Palio.numeroPortas = 4;
+            Palio.numeroAssentos = 5;
+            Palio.fabricante = "Fiat";
+            Palio.arCondicionado = true;
+            Palio.cintoSeguranca = true;
+            Palio.marcaRadio = "Estação1000";
+
+            Carro Uno = new Carro();
+            Uno.temMotor = true;
+            Uno.numeroPortas = 2;
+            Uno.numeroAssentos = 5;
+            Uno.fabricante = "Fiat";
+            Uno.arCondicionado = true;
+            Uno.cintoSeguranca = true;
+            Uno.marcaRadio = "Cochicho";
+
+            Bike Caloi = new Bike();
+            Caloi.temMotor = false;
+            Caloi.numeroPortas = 0;
+            Caloi.numeroAssentos = 1;
+
+            Bike Speed = new Bike();
+            Speed.temMotor = false;
+            Speed.numeroPortas = 0;
+            Speed.numeroAssentos = 1;
 
             // Faça uma ação chamada ExibirDados e
             // mostre as infos na tela pelo Console.WriteLine
             // Veiculo.cs e Carro.cs
-            Console.WriteLine(speed.ExibirDados());
+            Console.WriteLine("\n\nCriando um método da na class Veiculo que as class Carro e Bike herdam e podem usar, neste caso iremos apenas criar um método para mostrar os dados");
+            Console.WriteLine(Speed.ExibirDados());
             Console.WriteLine(Gol.ExibirDados());
 
 
@@ -138,9 +170,12 @@ namespace ProgramacaoPw_CSharp_Fatec
             // ======================
             // List
             // ======================
+
+            Console.WriteLine("\n\n======================\nList\n======================");
+
             // List<tipo> nome = new List<tipo>
             // Só entra na list quem for do tipo Carro
-            Console.WriteLine("\n\nList");
+            Console.WriteLine("\n\nUsando List e pegando os dados de algum elemento na List");
             List<Carro> listaCarros = new List<Carro>();
 
             listaCarros.Add(Gol);
@@ -151,14 +186,14 @@ namespace ProgramacaoPw_CSharp_Fatec
             Console.WriteLine(listaCarros[0].fabricante);
             listaCarros.Remove(Palio);
 
-            Console.WriteLine("\n\nFor list");
+            Console.WriteLine("\n\nPercorrendo a List com um FOR:");
             for (int i = 0; i < listaCarros.Count; i++)
             {
                 Console.WriteLine(listaCarros[i].ExibirDados());
             }
 
             // Foreach melhor para list
-            Console.WriteLine("\n\nForeach list");
+            Console.WriteLine("\n\nPercorrendo a List com um FOREACH:");
             foreach (var item in listaCarros)
             {
                 Console.WriteLine(item.ExibirMarca());
@@ -166,15 +201,36 @@ namespace ProgramacaoPw_CSharp_Fatec
 
 
 
+            // ======================
+            // Exercícios
+            // ======================
 
+            Console.WriteLine("\n\n======================\nExercício 1\n======================");
             // Imprima na tela todos os clientes desse contexto,
             // Dica crie uma lista para eles.
+            Console.WriteLine("\n\nCriando uma lista e add nela todos os clientes criados no program.cs e depois exibindo os dados deles");
+
+            List<Cliente> listaClientes = new List<Cliente>();
+
+            listaClientes.Add(c1);
+            listaClientes.Add(c2);
+            listaClientes.Add(c3);
+            listaClientes.Add(c4);
+            listaClientes.Add(c5);
+
+            foreach (var item in listaClientes)
+            {
+                Console.WriteLine(item.ExibeDadosClientes() + item.getEndereco().EnderecoCompleto());
+            }
 
 
 
 
+            Console.WriteLine("\n\n======================\nExercício 2\n======================");
             // Crie uma lista com 560 produtos
             // Imprima na tela
+            Console.WriteLine("\n\nCriando uma List do tipo Produto e adicionado nela 560 produtos criados com um FOR e depois mostrando os dados usando FOREACH\n");        
+
             List<Produto> listaProdutos = new List<Produto>();
 
             for (int i = 1; i <= 560; i++)
@@ -191,8 +247,25 @@ namespace ProgramacaoPw_CSharp_Fatec
 
 
 
+            Console.WriteLine("\n\n======================\nExercício 3\n======================");
             // Crie uma lista que aceite qualquer tipo de veiculo 
             // Imprima na tela
+            Console.WriteLine("\n\nCriando uma List que aceita qualquer tipo de veiculo, add os veiculos criados neste contexto nela e depois usando métodos e exibindo os dados de cada item adicionado \n");        
+
+
+            List<Veiculo> listaVeiculos = new List<Veiculo>();
+            
+            listaVeiculos.Add(Gol);
+            listaVeiculos.Add(Palio);
+            listaVeiculos.Add(Saveiro);
+            listaVeiculos.Add(Uno);
+            listaVeiculos.Add(Speed);
+            listaVeiculos.Add(Caloi);
+
+            foreach (var item in listaVeiculos)
+            {
+                Console.WriteLine(item.ExibirDados());
+            }
         }
     }
 }

@@ -40,21 +40,6 @@ namespace ProgramacaoWeb_CSharp_Fatec.Classes
             return "Rua: " + Rua + " \t Número: " + Numero;
         }
 
-        public Endereco BuscaPorCep(string cep)
-        {
-            return new Endereco("", "", "", cep, "", "");
-        }
-
-        public string EstadoPorCidade(string estado)
-        {
-            if (estado == "sp")
-            {
-                return "Taquaritinga";
-            }
-
-            return Cidade;
-        }
-
         // ======================
         // Métodos Get
         // ======================

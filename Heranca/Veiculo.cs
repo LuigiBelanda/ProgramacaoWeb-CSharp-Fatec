@@ -21,11 +21,11 @@ namespace ProgramacaoWeb_CSharp_Fatec.Heranca
         {
             if(temMotor == true)
             {
-                return "Tem motor (TRUE) e tem " + numeroAssentos + " assentos e " + numeroPortas + " portas";
+                return "Tem motor (TRUE), tem " + numeroAssentos + " assentos e " + numeroPortas + " portas";
             }
             else
             {
-                return "Número de assentos: " + numeroAssentos + " e Número de portas: " + numeroPortas;
+                return "NÃO tem motor, o  número de assentos é: " + numeroAssentos + " e o Número de portas: " + numeroPortas;
             }
         }
     }
