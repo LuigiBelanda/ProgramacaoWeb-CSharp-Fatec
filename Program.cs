@@ -22,7 +22,7 @@ namespace ProgramacaoPw_CSharp_Fatec
 
             // Aqui mudamos algumas infos do objeto com os métodos set da class e 
             // exibimos as novas infos no console
-            Console.WriteLine("\n\nMudando algumas infos do produto criado acima com os métodos set da class");
+            Console.WriteLine("\n\nMudando algumas infos do produto criado acima com os métodos set da class\n");
             p1.setValor(11.85M);
             p1.setDescricao("Cerveja Skol 1 litrão");
             Console.WriteLine("Descrição: " + p1.getDescricao() + " \t\t Valor: " + p1.getValor() + " \t\t ID: " + p1.getId());
@@ -76,7 +76,7 @@ namespace ProgramacaoPw_CSharp_Fatec
 
             Console.WriteLine("\n\n======================\nCliente + Endereco\n======================");
 
-            Console.WriteLine("\n\nUtilizando outra class (Cliente.cs) para criar alguns objetos do tipo Cliente e ainda dentro da class Cliente usando a class Endereco.cs");
+            Console.WriteLine("\n\nUtilizando outra class (Cliente.cs) para criar alguns objetos do tipo Cliente e ainda dentro da class Cliente usando a class Endereco.cs\n");
 
             // Aqui usamos a class Cliente para criar alguns objetos do tipo Cliente
             // Usamos o construtor da class Cliente e ainda aqui integramos uma outra classe dentro dela
@@ -160,7 +160,7 @@ namespace ProgramacaoPw_CSharp_Fatec
             // Faça uma ação chamada ExibirDados e
             // mostre as infos na tela pelo Console.WriteLine
             // Veiculo.cs e Carro.cs
-            Console.WriteLine("\n\nCriando um método da na class Veiculo que as class Carro e Bike herdam e podem usar, neste caso iremos apenas criar um método para mostrar os dados");
+            Console.WriteLine("\n\nCriando um método na class Veiculo que a class Carro e Bike herdam e podem usar, neste caso iremos apenas criar um método para mostrar os dados\n");
             Console.WriteLine(Speed.ExibirDados());
             Console.WriteLine(Gol.ExibirDados());
 
