@@ -18,6 +18,7 @@ namespace ProgramacaoPw_CSharp_Fatec
             Console.WriteLine("\n\nCriando um produto por meio da class Produto - Usando construtor\n");
 
             Produto p1 = new Produto(1, 10.90M, "Cervejinha");
+            Produto p2 = new Produto(2, 10.90M, "Cervejinha");
             Console.WriteLine("Descrição: " + p1.getDescricao() + " \t\t Valor: " + p1.getValor() + " \t\t ID: " + p1.getId());
 
             // Aqui mudamos algumas infos do objeto com os métodos set da class e 
@@ -266,6 +267,18 @@ namespace ProgramacaoPw_CSharp_Fatec
             {
                 Console.WriteLine(item.ExibirDados());
             }
+
+            Console.WriteLine("\n\n======================\nExercício Lista\n======================");
+            // Crie uma classe vendas com uma lista de produtos comprada por um cliente
+            // Imprima na tela a lista de produtos , o Id da venda e a Data da venda.
+            Console.WriteLine("\n\nCriando uma classe Venda que terá uma lista de Produtos comprados por um cliente");        
+
+            List<Produto> listaProdutosCliente = new List<Produto>();
+            listaProdutosCliente.Add(p1);
+            listaProdutosCliente.Add(p2);
+
+            Venda v = new Venda(1, DateTime.Now, listaProdutosCliente);
+            v.getDadosVenda();
         }
     }
 }
